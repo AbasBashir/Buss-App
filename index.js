@@ -18,3 +18,4 @@ function increment(){
 // Here is the comment from newBranch3
 // working on my project
 // it is going good
+// training training training
