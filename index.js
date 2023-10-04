@@ -15,7 +15,6 @@ function increment(){
 // comment made from newBranch
 // yoooo i added a comment from newBranch2
 
-
-// im the best i added commit from main for newBranch3
 // Here is the comment from newBranch3
-// training training training
+// working on my project
+// it is going good
