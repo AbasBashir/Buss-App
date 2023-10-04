@@ -12,3 +12,4 @@ function increment(){
 }
 
 // heres a comment
+// comment made from newBranch
