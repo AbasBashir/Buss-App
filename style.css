@@ -18,7 +18,6 @@ h2 {
 }
 
 button {
-    /* border: none; */
     padding-top: 10px;
     padding-bottom: 10px;
     color: white;
@@ -34,4 +33,8 @@ button {
 
 #save-btn {
     background: darkgreen;
+}
+
+#exit-btn {
+    background: orange;
 }

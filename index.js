@@ -1,21 +1,90 @@
 
 
-// First we need a variable to store counting, we declare by setting it 0 first.
+let count = 0;
 
-//Next, ww need to "listen" for clicks and when the button is clicked, we increment the button variable 
+let total = 0;
 
-//Finally we need to change the content inside id attribute count-people to reflect the new value
+let strTotal = "# Currently Total: ";
+
+let people = document.getElementById("count-people");
+
+let entries = document.getElementById("save-nr");
+
+let currentTotal = document.getElementById("current-nr");
+
 
 function increment(){
-    
-    console.log("HELOOOOOO");
+
+    if (count < 20){
+
+        //Evalute the total once passengers enter by adding count to total
+        if ( (total + count) == 20 ){
+
+            people.innerHTML = "Full";
+            return;
+        }
+
+        count += 1; // increment count since (total + count) < 20
+        people.innerHTML = count; // Update screen to current value 
+        
+    }else // If 20 people enter in the first stop then execute else
+    {
+        people.innerHTML = "Full"; 
+        return;
+
+    }
+
 }
 
-// heres a comment
-// comment made from newBranch
-// yoooo i added a comment from newBranch2
 
-// Here is the comment from newBranch3
-// working on my project
-// it is going good
-// training training training
+function save(){
+    
+    let countStr = count + " - "; 
+
+    total += count; // update total passengers
+
+    if ( total < 20){
+
+        entries.innerHTML += countStr;  // update content by concatenation
+        currentTotal.innerHTML = strTotal + total;
+
+        people.innerHTML = 0;
+        count = 0;
+
+    }else
+    {
+
+        entries.innerHTML += countStr;
+        // entries.innerHTML = "# Passengers / Stop: ";
+        currentTotal.innerHTML = strTotal + "Full";
+        total = 0;
+        count = 0;
+
+    }
+    
+
+}
+
+
+// function exit(){
+    
+//     count -= 1;
+//     let countStr = count + " - ";
+
+
+//     if (count < 20 ){
+
+//         entries.innerHTML += countStr;
+//         people.innerHTML = 0;
+//         count = 0;
+
+//     }else
+//     {   
+//         countStr = "Full";
+//         entries.innerHTML += countStr;
+//         count = 0;
+
+//     }
+    
+
+// }
