@@ -6,6 +6,8 @@ let total = 0;
 
 let strTotal = "# Currently Total: ";
 
+let strStop = "# Passengers / Stop: ";
+
 let people = document.getElementById("count-people");
 
 let entries = document.getElementById("save-nr");
@@ -16,6 +18,13 @@ let currentTotal = document.getElementById("current-nr");
 function increment(){
 
     if (count < 20){
+
+
+        if (entries.innerHTML == strStop + "20")
+        {
+            entries.innerHTML = strStop;
+
+        }
 
         //Evalute the total once passengers enter by adding count to total
         if ( (total + count) == 20 ){
@@ -54,8 +63,7 @@ function save(){
     }else
     {
 
-        entries.innerHTML += countStr;
-        // entries.innerHTML = "# Passengers / Stop: ";
+        entries.innerHTML = strStop + total;
         currentTotal.innerHTML = strTotal + "Full";
         total = 0;
         count = 0;
@@ -64,27 +72,3 @@ function save(){
     
 
 }
-
-
-// function exit(){
-    
-//     count -= 1;
-//     let countStr = count + " - ";
-
-
-//     if (count < 20 ){
-
-//         entries.innerHTML += countStr;
-//         people.innerHTML = 0;
-//         count = 0;
-
-//     }else
-//     {   
-//         countStr = "Full";
-//         entries.innerHTML += countStr;
-//         count = 0;
-
-//     }
-    
-
-// }
