@@ -4,6 +4,8 @@ let count = 0;
 
 let total = 0;
 
+let prevTitle = "People Entered: ";
+
 let strTotal = "# Currently: ";
 
 let strStop = "# Per Station: ";
@@ -23,7 +25,8 @@ function increment(){
 
 
         if (entries.innerHTML.includes("20"))
-        {
+        {   
+            title.innerHTML = prevTitle; 
             entries.innerHTML = strStop;
             currentTotal.innerHTML = strTotal;
 
@@ -32,6 +35,7 @@ function increment(){
         //Evalute the total once passengers enter by adding count to total
         if ( (total + count) == 20 ){
             
+            title.innerHTML = "Currently: ";
             people.innerHTML = "Full";
             alert("Subway is Full, press save to start over!");
             return;
@@ -46,6 +50,7 @@ function increment(){
 
     }else
     {
+        title.innerHTML = "Currently: ";
         people.innerHTML = "Full"; 
         return;
 
@@ -81,7 +86,7 @@ function save(){
     }else
     {
         entries.innerHTML += count + `(${total})`; 
-        console.log(entries);
+        title.innerHTML = "Currently: ";
         currentTotal.innerHTML = strTotal + "Full";
         total = 0;
         count = 0;
