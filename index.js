@@ -4,9 +4,9 @@ let count = 0;
 
 let total = 0;
 
-let strTotal = "# Currently Total: ";
+let strTotal = "# Currently: ";
 
-let strStop = "# Passengers / Stop: ";
+let strStop = "# Per Station: ";
 
 let people = document.getElementById("count-people");
 
@@ -16,13 +16,14 @@ let currentTotal = document.getElementById("current-nr");
 
 
 function increment(){
-
+    
     if (count < 20){
 
 
-        if (entries.innerHTML == strStop + "20")
+        if (entries.innerHTML.includes("20"))
         {
             entries.innerHTML = strStop;
+            currentTotal.innerHTML = strTotal;
 
         }
 
@@ -52,9 +53,19 @@ function save(){
 
     total += count; // update total passengers
 
-    if ( total < 20){
+    if (total == 0){
 
-        entries.innerHTML += countStr;  // update content by concatenation
+        if (entries.innerHTML.includes("20")) // if subway is full and user presses more than once, alert user it is already saved
+        {
+            alert("Subway is Full, already saved!");
+        }else{
+
+            alert("Nobody has entered, cannot save!"); // if subway is empty and user tries to save, alert user it is not possible to save
+        }
+
+    }else if ( total < 20){
+
+        entries.innerHTML += countStr;  // update # people per stop by concatenation
         currentTotal.innerHTML = strTotal + total;
 
         people.innerHTML = 0;
@@ -62,8 +73,8 @@ function save(){
 
     }else
     {
-
-        entries.innerHTML = strStop + total;
+        entries.innerHTML += count + `(${total})`; 
+        console.log(entries);
         currentTotal.innerHTML = strTotal + "Full";
         total = 0;
         count = 0;
