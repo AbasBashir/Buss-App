@@ -1,5 +1,4 @@
 
-
 let count = 0;
 
 let total = 0;
@@ -28,7 +27,7 @@ function increment(){
 
         alert("This is the final stop, save the log and exit!");
         return;
-        
+
     }else
     {
 
