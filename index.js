@@ -28,6 +28,7 @@ function increment(){
         {   
             title.innerHTML = prevTitle; 
             entries.innerHTML = strStop;
+            currentTotal.style.display = "block";
             currentTotal.innerHTML = strTotal;
 
         }
@@ -37,7 +38,8 @@ function increment(){
             
             title.innerHTML = "Currently: ";
             people.innerHTML = "Full";
-            alert("Subway is Full, press save to start over!");
+            currentTotal.style.display = "none";
+            alert("Bus is full, press save to log last entry!");
             return;
         }
 
@@ -46,10 +48,11 @@ function increment(){
         
     }else if (people.innerHTML.includes("Full"))
     {
-        alert("Subway is Full, press save to start over!");
+        alert("Bus is full, press save to start over!");
 
     }else
     {
+        currentTotal.style.display = "none";
         title.innerHTML = "Currently: ";
         people.innerHTML = "Full"; 
         return;
@@ -69,7 +72,8 @@ function save(){
 
         if (entries.innerHTML.includes("20")) // if subway is full and user presses more than once, alert user it is already saved
         {
-            alert("Subway is Full, already saved!");
+            alert("Already saved, press count to start over!");
+            
         }else{
 
             alert("Nobody has entered, cannot save!"); // if subway is empty and user tries to save, alert user it is not possible to save
@@ -87,7 +91,8 @@ function save(){
     {
         entries.innerHTML += count + `(${total})`; 
         title.innerHTML = "Currently: ";
-        currentTotal.innerHTML = strTotal + "Full";
+        // currentTotal.innerHTML = strTotal + "Full";
+        currentTotal.style.display = "none";
         total = 0;
         count = 0;
 

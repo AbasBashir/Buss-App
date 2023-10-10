@@ -3,6 +3,7 @@
 html{
 
     height: 100%;
+    font-size: 62.5%;
 }
 
 body {
@@ -20,7 +21,7 @@ main{
     background-color: skyblue;
     width: fit-content;
     margin: 0 auto;
-    padding: 40px 30px;
+    padding: 40px 30px 60px;
     top: 160px;
 }
 
@@ -31,13 +32,31 @@ main > .btn-container{
     align-items: center;
 }
 
+main > .record-container{
+    margin-top: 20px;
+    text-align: left;
+}
+
+main > .record-container > #save-nr{
+
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+
+}
+
+main > .record-container > #current-nr{
+    font-size: 1.8rem;
+}
+
 h1 {
+    font-size: 3rem;
     margin-top: 10px;
     margin-bottom: 10px;
+
 }
 
 h2 {
-    font-size: 50px;
+    font-size: 3.5rem;
     margin-top: 0;
     margin-bottom: 20px;
 }
@@ -50,10 +69,12 @@ button {
     width: 200px;
     margin-bottom: 5px;
     border-radius: 5px;
+    font-size: 2rem;
 }
 
 #increment-btn {
     background: darkred;
+    margin-bottom: 15px;
 }
 
 #save-btn {
