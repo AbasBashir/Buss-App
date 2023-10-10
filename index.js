@@ -10,6 +10,8 @@ let strStop = "# Per Station: ";
 
 let people = document.getElementById("count-people");
 
+let title = document.getElementById("title");
+
 let entries = document.getElementById("save-nr");
 
 let currentTotal = document.getElementById("current-nr");
@@ -29,15 +31,20 @@ function increment(){
 
         //Evalute the total once passengers enter by adding count to total
         if ( (total + count) == 20 ){
-
+            
             people.innerHTML = "Full";
+            alert("Subway is Full, press save to start over!");
             return;
         }
 
         count += 1; // increment count since (total + count) < 20
         people.innerHTML = count; // Update screen to current value 
         
-    }else // If 20 people enter in the first stop then execute else
+    }else if (people.innerHTML.includes("Full"))
+    {
+        alert("Subway is Full, press save to start over!");
+
+    }else
     {
         people.innerHTML = "Full"; 
         return;
